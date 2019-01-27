@@ -120,7 +120,6 @@ function resizeWindow() {
         document.getElementById("content-container").style.width = "80vw";
         document.getElementById("content-container").style.marginLeft = "20vw";
         document.getElementById("side-bar").style.width = "20vw";
-        document.getElementById("section-four").style.paddingBottom = "40vh";
     }
     else {
         let ps = document.querySelectorAll("#side-bar p");
@@ -148,6 +147,5 @@ function resizeWindow() {
         document.getElementById("content-container").style.width = "70vw";
         document.getElementById("content-container").style.marginLeft = "30vw";
         document.getElementById("side-bar").style.width = "30vw";
-        document.getElementById("section-four").style.paddingBottom = "30vh";
     }
 }
