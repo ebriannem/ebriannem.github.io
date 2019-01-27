@@ -19,16 +19,16 @@ p {
   color: #A2A3A1;
 }
 
-h1, h2 {
+h1, h2, h4 {
   font-family: Dosis, monospace;
   font-variant: small-caps;
   letter-spacing: 0.5em;
   padding-bottom: 10px;
   transition-duration: 1s;
 }
-h1:hover, h2:hover {
+h1:hover, h2:hover, h4:hover {
   letter-spacing: 0.9em;
-  color: white;
+  color: #EB5E55;
 }
 
 #arrow {
@@ -70,21 +70,23 @@ header a {
   font-variant-caps: small-caps;
 }
 
-#logo {
+header h1 {
   grid-area: logo;
+  color: #EB5E55;
 }
 
 #name, #major {
-  transition-duration: 1s;
   font-family: Dosis, monospace;
 }
 
 #name {
   font-size: larger;
+  color: #EB5E55;
 }
 
 #major {
   font-size: large;
+  color: #0F9EDB;
 }
 
 #welcome {
@@ -198,8 +200,8 @@ header a {
 }
 
 #college {
-  font-variant: small-caps;
   grid-area: college;
+  color: #EB5E55;
 }
 
 #degree {
@@ -211,7 +213,7 @@ header a {
 #gpa {
   grid-area: gpa;
   text-align: right;
-  text-shadow: 2px 2px 4px black;
+  font: Dosis, monospace;
 }
 
 #date {
@@ -237,7 +239,6 @@ header a {
   border-radius: 10px;
   list-style-type: none;
   margin: 10px;
-  color: #050609;
   box-shadow: 1px 1px 2px black;
   text-align: center;
 }
@@ -249,36 +250,20 @@ header a {
   letter-spacing: 0.2em;
 }
 
-#familiar {
-  border-color: #C9FFE9;
+#familiar, #proficient {
+  border-color: #0F9EDB;
 }
-#familiar h3 {
-  color: #C9FFE9;
-}
-#familiar li {
-  background-color: #C9FFE9;
+#familiar li, #proficient li {
+  background-color: #0F9EDB;
   transition-duration: 1s;
 }
-#familiar li:hover {
+#familiar li:hover, #proficient li:hover {
   background-color: #EB5E55;
   font-size: larger;
   color: #E5E6E4;
 }
-
-#proficient {
-  border-color: #FFF7A3;
-}
-#proficient li {
-  background-color: #FFF7A3;
-  transition-duration: 1s;
-}
-#proficient li:hover {
-  background-color: #EB5E55;
-  font-size: larger;
-  color: #E5E6E4;
-}
-#proficient h3 {
-  color: #FFF7A3;
+#familiar h3, #proficient h3 {
+  color: #0F9EDB;
 }
 
 #classes {
@@ -300,6 +285,10 @@ header a {
 #classes li:hover {
   text-shadow: 2px 2px 4px black;
   color: #EB5E55;
+}
+#classes li i {
+  color: #EB5E55;
+  font-family: Dosis, monospace;
 }
 
 #projects {
@@ -332,6 +321,7 @@ header a {
   margin-left: 5px;
   height: max-content;
   font-size: small;
+  color: #EB5E55;
 }
 .project img {
   width: 100%;
@@ -344,9 +334,9 @@ header a {
   width: max-content;
   height: auto;
   border-radius: 10px;
-  background-color: #C9FFE9;
+  background-color: #0F9EDB;
   display: inline-block;
-  color: #050609;
+  color: white;
   transition-duration: 1s;
 }
 .lang:hover {

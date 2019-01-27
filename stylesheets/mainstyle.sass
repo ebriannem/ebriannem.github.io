@@ -4,8 +4,8 @@ $default-font: Raleway, monospace
 //COLORS
 $off-white: #E5E6E4
 $light-black: #393D3F
-$blue-accent: #C9FFE9
-$yellow-accent: #FFF7A3
+$blue-accent: #0F9EDB
+$yellow-accent: #0F9EDB
 $warm-black: #050609
 $salmon: #EB5E55
 $silver: #A2A3A1
@@ -29,16 +29,15 @@ a
 p
   color: $silver
 
-h1, h2
+h1, h2, h4
   font-family: $header-font
   font-variant: small-caps
   letter-spacing: .5em
   padding-bottom: 10px
   transition-duration: 1s
-
   &:hover
     letter-spacing: .9em
-    color: white
+    color: $salmon
 
 
 //Effect for bubbles on hover
@@ -87,19 +86,21 @@ header
     text-align: right
     font-variant-caps: small-caps
 
-#logo
+header h1
   grid-area: logo
+  color: $salmon
 
 //Welcome Section
 #name, #major
-  transition-duration: 1s
   font-family: $header-font
 
 #name
   font-size: larger
+  color: $salmon
 
 #major
   font-size: large
+  color: $blue-accent
 
 #welcome
   background-color: $warm-black
@@ -205,8 +206,8 @@ header
     filter: grayscale(100%)
 
 #college
-  font-variant: small-caps
   grid-area: college
+  color: $salmon
 
 #degree
   font-variant: small-caps
@@ -216,7 +217,7 @@ header
 #gpa
   grid-area: gpa
   text-align: right
-  text-shadow: 2px 2px 4px black
+  font: $header-font
 
 #date
   grid-area: date
@@ -239,7 +240,6 @@ header
     border-radius: 10px
     list-style-type: none
     margin: 10px
-    color: $warm-black
     box-shadow: 1px 1px 2px black
     text-align: center
 
@@ -251,18 +251,7 @@ header
     letter-spacing: .2em
 
 
-#familiar
-  border-color: $blue-accent
-
-  h3
-    color: $blue-accent
-
-  li
-    background-color: $blue-accent
-    +bubble-grow()
-
-
-#proficient
+#familiar, #proficient
   border-color: $yellow-accent
 
   li
@@ -292,6 +281,9 @@ header
     &:hover
       text-shadow: 2px 2px 4px black
       color: $salmon
+    i
+      color: $salmon
+      font-family: $header-font
 
 
 //PROJECTS
@@ -325,6 +317,7 @@ header
     margin-left: 5px
     height: max-content
     font-size: small
+    color: $salmon
 
   img
     width: 100%
@@ -338,7 +331,7 @@ header
   border-radius: 10px
   background-color: $blue-accent
   display: inline-block
-  color: $warm-black
+  color: white
   +bubble-grow()
 
 .description
