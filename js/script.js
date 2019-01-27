@@ -1,6 +1,7 @@
 //Update content when scrolling
 document.getElementById("side-bar").addEventListener('scroll', updateScroll);
 let sections = document.getElementsByClassName("section");
+resizeWindow();
 
 function updateScroll() {
     //Draw all of the sections based on scroll position
@@ -25,13 +26,14 @@ function updateScroll() {
                 displayContent(document.getElementById("projects"), pos);
                 break;
             case ("section-four"):
-                animText(sections[i].getElementsByTagName("H1")[0], pos, "Contact Me");
-                displayContent(document.getElementById("contact"), pos);
-                //Only show arrow when you can scroll
-                if (pos < window.innerHeight * .2) {
+                animText(sections[i].getElementsByTagName("H1")[0], pos, "Contact");
+                let CInfo = document.getElementById("contact");
+                if(parseInt(CInfo.style.left) <= 0 && pos < window.innerHeight * .2){
                     document.getElementById("arrow").style.display = "none";
+                    CInfo.style.left = "-1vw";
                 } else {
                     document.getElementById("arrow").style.display = "block";
+                    displayContent(document.getElementById("contact"), pos);
                 }
                 break;
             default:
@@ -85,4 +87,64 @@ function animateScroll({draw, location}) {
         frac = 0;
     }
     draw(frac);
+}
+
+
+window.addEventListener('resize', resizeWindow, true);
+
+function resizeWindow() {
+    if(window.innerWidth < 600) {
+        let ps = document.querySelectorAll("#side-bar p");
+        for (let i = 0; i < ps.length; i++) {
+            ps[i].style.display = "none"
+        }
+        let sh = document.querySelectorAll("#side-bar h1");
+        for (let i = 0; i < ps.length; i++) {
+            sh[i].style.writingMode = "vertical-lr";
+            sh[i].style.textOrientation = "upright";
+            sh[i].style.fontSize = "medium";
+        }
+        let secs = document.querySelectorAll(".section");
+        for (let i = 0; i < ps.length; i++) {
+            secs[i].style.paddingLeft = "0";
+            secs[i].style.paddingRight = "1vw";
+        }
+        let cons = document.querySelectorAll(".content");
+        for (let i = 0; i < ps.length; i++) {
+            cons[i].style.marginLeft = "10vw";
+            cons[i].style.width = "90vw";
+        }
+        document.getElementById("projects").style.gridTemplateColumns = "1fr";
+        document.getElementById("contact").style.marginLeft = "10vw";
+        document.getElementById("content-container").style.width = "100vw";
+        document.getElementById("content-container").style.marginLeft = "10vw";
+        document.getElementById("side-bar").style.width = "10vw";
+    }
+    else {
+        let ps = document.querySelectorAll("#side-bar p");
+        for (let i = 0; i < ps.length; i++) {
+            ps[i].style.display = "block";
+        }
+        let sh = document.querySelectorAll("#side-bar h1");
+        for (let i = 0; i < ps.length; i++) {
+            sh[i].style.writingMode = "lr";
+            sh[i].style.textOrientation = "mixed";
+            sh[i].style.fontSize = "x-large";
+        }
+        let secs = document.querySelectorAll(".section");
+        for (let i = 0; i < ps.length; i++) {
+            secs[i].style.paddingLeft = "20px";
+            secs[i].style.paddingRight = "20px";
+        }
+        let cons = document.querySelectorAll(".content");
+        for (let i = 0; i < ps.length; i++) {
+            cons[i].style.marginLeft = "30vw";
+            cons[i].style.width = "70vw";
+        }
+        document.getElementById("projects").style.gridTemplateColumns = "1fr 1fr";
+        document.getElementById("contact").style.marginLeft = "30vw";
+        document.getElementById("content-container").style.width = "70vw";
+        document.getElementById("content-container").style.marginLeft = "30vw";
+        document.getElementById("side-bar").style.width = "30vw";
+    }
 }

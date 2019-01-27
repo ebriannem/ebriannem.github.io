@@ -104,11 +104,10 @@ header h1
 
 #welcome
   background-color: $warm-black
-
+  left: 0
   p
     margin: 10px
     font-size: large
-
   h2
     font-size: large
     letter-spacing: .6em
@@ -121,7 +120,6 @@ header h1
   height: 100vh
   width: 30vw
   overflow-y: scroll
-  overflow-x: hidden
   left: -50px
   padding-left: 50px
   direction: rtl
@@ -142,13 +140,12 @@ header h1
   margin-top: 20vh
 
 #section-four
-  padding-bottom: 100vh
+  padding-bottom: 30vh
 
 .section
   padding: 30vh 20px 50vh 20px
   width: 100%
   max-width: available
-
   h1
     word-wrap: break-word
 
@@ -156,38 +153,34 @@ header h1
   position: fixed
   background-color: $off-white
   width: 70vw
-  height: 100%
+  height: 100vh
   margin-left: 30vw
   margin-top: 10vh
   z-index: 10000
   color: $warm-black
 
 .content
-  width: 100%
-  height: 100%
-  padding: 5%
-  position: relative
-  left: 0
+  left: 100vw
+  width: inherit
+  height: inherit
+  margin-left: 30vw
+  position: inherit
+  padding-left: 5vw
+  padding-top: 5vh
+  padding-bottom: 20vh
+  padding-right: 5vw
+
 
 //EDUCATION
 #university
-  position: fixed
-  min-width: 500px
-  width: 80vw
-  top: 10vh
-  left: 100vw
-  margin-left: 30vw
   display: grid
   grid-template-columns: 2fr 1fr
   grid-template-rows: 1fr 5fr
   grid-template-areas: "uniheader uniheader" "classes languages"
   background-color: $warm-black
   overflow-y: scroll
-  overflow-x: scroll
-  padding-top: 0
-  padding-bottom: 20vw
-  margin-bottom: 20vw
-  padding-right: 10vw
+  width: inherit
+
 
 #uniHeader
   grid-area: uniheader
@@ -207,7 +200,6 @@ header h1
 
 #college
   grid-area: college
-  color: $salmon
 
 #degree
   font-variant: small-caps
@@ -218,6 +210,7 @@ header h1
   grid-area: gpa
   text-align: right
   font: $header-font
+  color: $salmon
 
 #date
   grid-area: date
@@ -258,9 +251,6 @@ header h1
     background-color: $yellow-accent
     +bubble-grow()
 
-  h3
-    color: $yellow-accent
-
 
 #classes
   grid-area: classes
@@ -288,17 +278,10 @@ header h1
 
 //PROJECTS
 #projects
-  position: fixed
-  width: 80vw
-  top: 10vh
-  left: 100vw
-  margin-left: 30vw
-  padding-bottom: 15vh
-  padding-right: 10vw
   display: grid
+  width: inherit
   grid-template-columns: 1fr 1fr
-  grid-template-rows: 1fr
-  grid-gap: 10px
+  grid-gap: 2vw
   justify-items: center
   justify-content: space-between
   align-content: space-between
@@ -307,8 +290,7 @@ header h1
 
 .project
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5)
-  max-width: 30vw
-  width: max-content
+  max-width: 80%
   height: auto
   background-color: $warm-black
   color: $off-white
@@ -345,19 +327,15 @@ header h1
 
 //Contact
 #contact
-  position: fixed
-  left: 100vw
-  display: grid
   grid-template-columns: 1fr
   grid-template-rows: 1fr 1fr 1fr
-  width: 70vw
-  height: 90vh
-  top: 10vh
-  margin-left: 30vw
-  padding: 0
+  width: 100%
+  padding-left: 0
+  padding-top: 0
 
   div
     padding: 20px
+    height: 30vh
 
 #email
   background-color: $off-white
