@@ -93,7 +93,7 @@ function animateScroll({draw, location}) {
 window.addEventListener('resize', resizeWindow, true);
 
 function resizeWindow() {
-    if(window.innerWidth < 800) {
+    if(window.innerWidth / window.devicePixelRatio < 400) {
         let ps = document.querySelectorAll("#side-bar p");
         for (let i = 0; i < ps.length; i++) {
             ps[i].style.display = "none"
