@@ -1,10 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Brianne Matthews</title>
+    <link rel="stylesheet" type="text/css" href="mainstyle.css">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Dosis" rel="stylesheet">
 </head>
+<!--Top Bar-->
+<header>
+    <h1>Brianne</h1>
+    <a href="mailto:e.brianne.matthews@gmail.com">e.brianne.matthews@gmail.com</a>
+</header>
+
 <body>
-$END$
+<!--Side Bar-->
+<div id="side-bar">
+
+    <div id="scroll-here">SCROLL HERE</div>
+    <div id="arrow">==></div>
+    <!--Welcome Section-->
+    <div id="section-one" class="section"></div>
+    <!--Education Section-->
+    <div id="section-two" class="section">
+        <h1></h1>
+        <p>I'm in my second year of studying Computer Science. I'm planning on graduating with a Bachelor's in Computer
+            Science and Minor in Mathematics in 2020. I expect to complete my Master's in Computer Science in 2021.</p>
+    </div>
+    <!--Project Section-->
+    <div id="section-three" class="section">
+        <h1></h1>
+        <p>Here are a few recent projects I've completed. You can find the code for this website and the voronoi
+            tessellations on my GitHub. The other projects were course assignments, so please send me a note if you
+            would like to see them.</p>
+    </div>
+    <!--Contact Section-->
+    <div id="section-four" class="section">
+        <h1></h1>
+        <p>I'm currently searching for a 6-month Co-Op/internship in Computer Science for July 2019 - December 2019.
+            I'm open to any position where I can learn and get hands-on experience working in the field of Computer
+            Science. Feel free to get in touch, and thanks for visiting!</p>
+    </div>
+</div>
+<!--Main Content-->
+<div id="content-container">
+    <!--Welcome content-->
+    <div id="welcome" class="content">
+        <h1>Welcome.</h1>
+        <p>Hello, my name is <span id="name">Brianne Matthews</span>,</p>
+        <p>I'm a <span id="major"> computer science </span> student at Northeastern University, and this is my website.
+        </p>
+        <h2>Thanks for visiting.</h2>
+    </div>
+    <!--Education Content-->
+    <div id="university" class="content">
+        <!--University information-->
+        <div id="uniHeader">
+            <img alt="NEU Logo" src="https://i0.wp.com/web.northeastern.edu/numa/wp-content/uploads/NEU-logo.png?ssl=1">
+            <h2 id="college">Northeastern University</h2>
+            <h3 id="degree">Bachelors of Science in Computer Science</h3>
+            <h4 id="date">2017 - Present</h4>
+            <h4 id="gpa">GPA: 3.96/4.00</h4>
+        </div>
+        <!--Relevant Classes-->
+        <div id="classes">
+            <h4>Relevant Courses</h4>
+            <ul>
+                <li>Algorithms <i>(Graduate Level)</i></li>
+                <li>Artificial Intelligence</li>
+                <li>Computer Systems</li>
+                <li>Logic and Computation</li>
+                <li>Networks and Systems</li>
+                <li>Object-Oriented Design</li>
+                <li>Programming Languages <i>(Graduate Level)</i></li>
+                <li>Theory of Computation</li>
+                <li>Embedded Design and Enabling Robotics</li>
+            </ul>
+        </div>
+        <!--Knowledge/Skills-->
+        <div id="languages">
+            <div id="proficient" class="lanSec">
+                <h3>Proficient</h3>
+                <ul>
+                    <li>Java</li>
+                    <li>C++</li>
+                    <li>C</li>
+                    <li>Python</li>
+                    <li>Racket</li>
+                </ul>
+            </div>
+            <div id="familiar" class="lanSec">
+                <h3>Familiar</h3>
+                <ul>
+                    <li>Javascript</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>AMD64 Assembly</li>
+                </ul>
+            </div>
+            <div id="other" class="lanSec">
+                <h3>Other</h3>
+                <ul>
+                    <li>Linux Ubuntu</li>
+                    <li>Windows 7-10</li>
+                    <li>MatLab</li>
+                    <li>Latex</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--Projects Content-->
+    <div id="projects" class="content">
+        <div class="project">
+            <img src="https://s3.amazonaws.com/codecademy-content/courses/learn-css-grid/lesson-ii/image-1.png"/>
+            <h2>FILE SYSTEM</h2>
+            <p class="lang">C</p>
+            <p class="description">
+                Designed a ext2 filesystem using the FUSE framework. Supported basic reading and writing of large and
+                small files as well as more complex functionality such as permissions, timestamps, and nested
+                directories.
+            </p>
+        </div>
+        <div class="project">
+            <img src="https://s3.amazonaws.com/codecademy-content/courses/learn-css-grid/lesson-ii/image-1.png"/>
+            <h2>ANIMATOR</h2>
+            <p class="lang">Java</p>
+            <p class="description">
+                Designed a Java application that allowed the user to create animations using basic shapes. Designed a UI
+                that allows viewing the animation with the added functionality of changing speed, jumping in time, and
+                looping. When done, the user can export the
+                animation.
+            </p>
+        </div>
+        <div class="project">
+            <img src="https://s3.amazonaws.com/codecademy-content/courses/learn-css-grid/lesson-ii/image-1.png"/>
+            <h2>VORONOI DIAGRAM</h2>
+            <p class="lang">Java</p>
+            <p class="description">
+                As a personal project, implemented Fortune's Algorithm, the fastest way to generate Voronoi Diagrams.
+                Used parabolas to partition a plane based on starting points. Added a UI that allows a user to add and
+                remove points at random or where the user clicks
+                on the diagram.
+            </p>
+        </div>
+        <div class="project">
+            <img src="https://s3.amazonaws.com/codecademy-content/courses/learn-css-grid/lesson-ii/image-1.png"/>
+            <h2>PERSONAL WEBSITE</h2>
+            <p class="lang">HTML</p>
+            <p class="lang">CSS</p>
+            <p class="lang">JavaScript</p>
+            <p class="description">
+                Created this website as a way to learn more about web development, since I had never taken a course on
+                the subject. Used HTML, CSS (SASS), and plain Javascript in WebStorm.
+            </p>
+        </div>
+    </div>
+    <!--Contact Information-->
+    <div id="contact" class="content">
+        <div id="email">
+            <h2>Email</h2>
+            <a href="mailto:e.brianne.matthews@gmail.com">e.brianne.matthews@gmail.com</a>
+        </div>
+        <div id="connect">
+            <h2>Connect</h2>
+            <a href="https://www.linkedin.com/in/ebriannem/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/ebriannem" target="_blank">GitHub</a>
+        </div>
+        <div id="resume">
+            <h2>Résumé</h2>
+            <a href="https://github.com/ebriannem/ebriannem.github.io/raw/master/ResumeV.pdf">PDF version</a>
+        </div>
+    </div>
+</div>
 </body>
+
 </html>
