@@ -26,7 +26,6 @@ function updateScroll() {
                 displayContent(document.getElementById("projects"), pos);
                 break;
             case ("section-four"):
-                animText(sections[i].getElementsByTagName("H1")[0], pos, "Contact");
                 let CInfo = document.getElementById("contact");
                 if(parseInt(CInfo.style.left) <= 0 && pos < window.innerHeight * .2){
                     document.getElementById("arrow").style.display = "none";
@@ -34,6 +33,7 @@ function updateScroll() {
                 } else {
                     document.getElementById("arrow").style.display = "block";
                     displayContent(document.getElementById("contact"), pos);
+                    animText(sections[i].getElementsByTagName("H1")[0], pos, "Contact");
                 }
                 break;
             default:
@@ -111,14 +111,15 @@ function resizeWindow() {
         }
         let cons = document.querySelectorAll(".content");
         for (let i = 0; i < ps.length; i++) {
-            cons[i].style.marginLeft = "10vw";
-            cons[i].style.width = "90vw";
+            cons[i].style.marginLeft = "20vw";
+            cons[i].style.width = "80vw";
         }
         document.getElementById("projects").style.gridTemplateColumns = "1fr";
-        document.getElementById("contact").style.marginLeft = "10vw";
-        document.getElementById("content-container").style.width = "100vw";
-        document.getElementById("content-container").style.marginLeft = "10vw";
-        document.getElementById("side-bar").style.width = "10vw";
+        document.getElementById("contact").style.marginLeft = "20vw";
+        document.getElementById("content-container").style.width = "80vw";
+        document.getElementById("content-container").style.marginLeft = "20vw";
+        document.getElementById("side-bar").style.width = "20vw";
+        document.getElementById("section-four").style.paddingBottom = "40vh";
     }
     else {
         let ps = document.querySelectorAll("#side-bar p");
@@ -146,5 +147,6 @@ function resizeWindow() {
         document.getElementById("content-container").style.width = "70vw";
         document.getElementById("content-container").style.marginLeft = "30vw";
         document.getElementById("side-bar").style.width = "30vw";
+        document.getElementById("section-four").style.paddingBottom = "30vh";
     }
 }
