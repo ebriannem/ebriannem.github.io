@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Brianne Matthews</title>
-    <link rel="stylesheet" type="text/css" href="mainstyle.css">
-    <script type="text/javascript" src="js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/mainstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway|Dosis" rel="stylesheet">
 </head>
 <!--Top Bar-->
@@ -99,21 +98,36 @@
                     <li>AMD64 Assembly</li>
                 </ul>
             </div>
-            <div id="other" class="lanSec">
-                <h3>Other</h3>
-                <ul>
-                    <li>Linux Ubuntu</li>
-                    <li>Windows 7-10</li>
-                    <li>MatLab</li>
-                    <li>Latex</li>
-                </ul>
-            </div>
         </div>
     </div>
     <!--Projects Content-->
     <div id="projects" class="content">
         <div class="project">
-            <img src="https://s3.amazonaws.com/codecademy-content/courses/learn-css-grid/lesson-ii/image-1.png"
+            <img src="resources/voronoi-image.png"
+                 alt="Picture of voronoi tessellation"/>
+            <h2>VORONOI DIAGRAM</h2>
+            <p class="lang">Java</p>
+            <p class="description">
+                As a personal project, implemented Fortune's Algorithm, the fastest way to generate Voronoi Diagrams.
+                Used parabolas to partition a plane based on starting points. Added a UI that allows a user to add and
+                remove points at random or where the user clicks
+                on the diagram.
+            </p>
+        </div>
+        <div class="project">
+            <img src="resources/personal-website-img.png"
+                 alt="Picture of code for website"/>
+            <h2>PERSONAL WEBSITE</h2>
+            <p class="lang">HTML</p>
+            <p class="lang">CSS</p>
+            <p class="lang">JavaScript</p>
+            <p class="description">
+                Created this website as a way to learn more about web development, since I had never taken a course on
+                the subject. Used HTML, CSS (SASS), and plain Javascript in WebStorm.
+            </p>
+        </div>
+        <div class="project">
+            <img src="resources/filesystem-img.png"
                  alt="Picture of filesystem"/>
             <h2>FILE SYSTEM</h2>
             <p class="lang">C</p>
@@ -135,30 +149,6 @@
                 animation.
             </p>
         </div>
-        <div class="project">
-            <img src="https://s3.amazonaws.com/codecademy-content/courses/learn-css-grid/lesson-ii/image-1.png"
-            alt="Picture of voronoi tessellation"/>
-            <h2>VORONOI DIAGRAM</h2>
-            <p class="lang">Java</p>
-            <p class="description">
-                As a personal project, implemented Fortune's Algorithm, the fastest way to generate Voronoi Diagrams.
-                Used parabolas to partition a plane based on starting points. Added a UI that allows a user to add and
-                remove points at random or where the user clicks
-                on the diagram.
-            </p>
-        </div>
-        <div class="project">
-            <img src="https://s3.amazonaws.com/codecademy-content/courses/learn-css-grid/lesson-ii/image-1.png"
-            alt="Picture of code for website"/>
-            <h2>PERSONAL WEBSITE</h2>
-            <p class="lang">HTML</p>
-            <p class="lang">CSS</p>
-            <p class="lang">JavaScript</p>
-            <p class="description">
-                Created this website as a way to learn more about web development, since I had never taken a course on
-                the subject. Used HTML, CSS (SASS), and plain Javascript in WebStorm.
-            </p>
-        </div>
     </div>
     <!--Contact Information-->
     <div id="contact" class="content">
@@ -173,10 +163,12 @@
         </div>
         <div id="resume">
             <h2>Résumé</h2>
-            <a href="https://github.com/ebriannem/ebriannem.github.io/raw/master/ResumeV.pdf">PDF version</a>
+            <a href="resources/EBrianneMatthews_Resume.pdf" target="_blank">PDF version</a>
         </div>
     </div>
 </div>
+<script type="text/javascript" src="js/script.js"></script>
+
 </body>
 
 </html>
