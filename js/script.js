@@ -29,6 +29,7 @@ function updateScroll() {
                 let CInfo = document.getElementById("contact");
                 if(parseInt(CInfo.style.left) <= 0 && pos < window.innerHeight * .2){
                     document.getElementById("arrow").style.display = "none";
+                    sections[i].getElementsByTagName("H1")[0].innerHTML = "Contact";
                     CInfo.style.left = "-1vw";
                 } else {
                     document.getElementById("arrow").style.display = "block";
