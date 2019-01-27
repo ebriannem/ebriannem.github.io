@@ -2,7 +2,7 @@
 document.getElementById("side-bar").addEventListener('scroll', updateScroll);
 let sections = document.getElementsByClassName("section");
 
-function updateScroll(e) {
+function updateScroll() {
     //Draw all of the sections based on scroll position
     for (let i = sections.length - 1; i >= 0; i--) {
         let pos = getTopOffset(sections[i]);
