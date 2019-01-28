@@ -1,3 +1,5 @@
+/****************** CONSTANTS ********************/
+/****************** DEFAULTS ********************/
 * {
   box-sizing: border-box;
   font-family: Raleway, monospace;
@@ -31,6 +33,8 @@ h1:hover, h2:hover, h4:hover {
   color: #EB5E55;
 }
 
+/****************** MIXINS ********************/
+/****************** SIDE BAR ********************/
 #arrow {
   writing-mode: vertical-rl;
   position: fixed;
@@ -50,56 +54,6 @@ h1:hover, h2:hover, h4:hover {
   bottom: 30vh;
   font-size: large;
   font-family: Dosis, monospace;
-}
-
-header {
-  position: fixed;
-  width: 100vw;
-  height: 10vh;
-  z-index: 100;
-  background-color: #050609;
-  display: grid;
-  grid-template: "logo menu-button";
-}
-header h1 {
-  font-size: small;
-}
-header a {
-  font-family: Dosis, monospace;
-  text-align: right;
-  font-variant-caps: small-caps;
-}
-
-header h1 {
-  grid-area: logo;
-  color: #EB5E55;
-}
-
-#name, #major {
-  font-family: Dosis, monospace;
-}
-
-#name {
-  font-size: larger;
-  color: #EB5E55;
-}
-
-#major {
-  font-size: large;
-  color: #0F9EDB;
-}
-
-#welcome {
-  background-color: #050609;
-  left: 0;
-}
-#welcome p {
-  margin: 10px;
-  font-size: large;
-}
-#welcome h2 {
-  font-size: large;
-  letter-spacing: 0.6em;
 }
 
 #side-bar {
@@ -126,14 +80,6 @@ header h1 {
   background-image: linear-gradient(#050609 10vh, rgba(5, 6, 9, 0), rgba(5, 6, 9, 0), #050609);
 }
 
-#section-one {
-  margin-top: 20vh;
-}
-
-#section-four {
-  padding-bottom: 40vh;
-}
-
 .section {
   padding: 30vh 20px 50vh 20px;
   width: 100%;
@@ -143,6 +89,38 @@ header h1 {
   word-wrap: break-word;
 }
 
+#section-one {
+  margin-top: 20vh;
+}
+
+#section-four {
+  padding-bottom: 40vh;
+}
+
+/****************** TOP BAR ********************/
+header {
+  position: fixed;
+  width: 100vw;
+  height: 10vh;
+  z-index: 100;
+  background-color: #050609;
+  display: grid;
+  grid-template-areas: "logo email";
+  justify-content: space-between;
+}
+header h1 {
+  font-size: small;
+  grid-area: logo;
+  color: #EB5E55;
+}
+header a {
+  font-family: Dosis, monospace;
+  text-align: right;
+  font-variant-caps: small-caps;
+  grid-area: email;
+}
+
+/****************** MAIN CONTENT ********************/
 #content-container {
   position: fixed;
   background-color: #E5E6E4;
@@ -163,6 +141,35 @@ header h1 {
   padding: 5vh 5vw 20vh;
 }
 
+/****************** WELCOME CONTENT ********************/
+#welcome {
+  background-color: #050609;
+  left: 0;
+}
+#welcome p {
+  margin: 10px;
+  font-size: large;
+}
+#welcome h2 {
+  font-size: large;
+  letter-spacing: 0.6em;
+}
+
+#name, #major {
+  font-family: Dosis, monospace;
+}
+
+#name {
+  font-size: larger;
+  color: #EB5E55;
+}
+
+#major {
+  font-size: large;
+  color: #0F9EDB;
+}
+
+/****************** EDUCATION CONTENT ********************/
 #university {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -267,7 +274,7 @@ header h1 {
 #classes li {
   padding: 10px;
   list-style-type: circle;
-  color: var(--off-white);
+  color: #E5E6E4;
   transition-duration: 1s;
 }
 #classes li:hover {
@@ -279,6 +286,7 @@ header h1 {
   font-family: Dosis, monospace;
 }
 
+/****************** PROJECTS CONTENT ********************/
 #projects {
   display: grid;
   width: inherit;
@@ -335,6 +343,7 @@ header h1 {
   border-top: 1px solid #211A1D;
 }
 
+/****************** CONTACT CONTENT ********************/
 #contact {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;

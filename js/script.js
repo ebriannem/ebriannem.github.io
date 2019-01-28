@@ -1,7 +1,10 @@
-//Update content when scrolling
+//Immediately resize elements as necessary
+resizeWindow();
+window.addEventListener('resize', resizeWindow, true);
+/***************** SCROLLING ****************/
+//Update as the user scrolls the side-bar
 document.getElementById("side-bar").addEventListener('scroll', updateScroll);
 let sections = document.getElementsByClassName("section");
-resizeWindow();
 
 function updateScroll() {
     //Draw all of the sections based on scroll position
@@ -44,7 +47,6 @@ function updateScroll() {
     }
 }
 
-//Element Number String
 //Show percentage of text in holder based on pos
 function animText(holder, pos, text) {
     animateScroll({
@@ -71,8 +73,9 @@ function displayContent(el, pos) {
     });
 }
 
+//Progress animation as the location approaches the mid points.
+//Reverse animation as the location leaves the mid points.
 function animateScroll({draw, location}) {
-
     let start = window.innerHeight * -0.4;
     let mid1 = window.innerHeight * 0.05;
     let mid2 = window.innerHeight * .20;
@@ -91,8 +94,7 @@ function animateScroll({draw, location}) {
 }
 
 
-window.addEventListener('resize', resizeWindow, true);
-
+//Resize elements to make the website easier to navigate on smaller screens
 function resizeWindow() {
     if(window.innerWidth / window.devicePixelRatio < 400) {
         let ps = document.querySelectorAll("#side-bar p");

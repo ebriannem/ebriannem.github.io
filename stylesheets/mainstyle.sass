@@ -1,16 +1,20 @@
-//FONTS
+/****************** CONSTANTS ********************/
+//Font families
 $header-font: Dosis, monospace
 $default-font: Raleway, monospace
-//COLORS
+
+//Colors
 $off-white: #E5E6E4
 $light-black: #393D3F
 $blue-accent: #0F9EDB
-$yellow-accent: #0F9EDB
 $warm-black: #050609
 $salmon: #EB5E55
 $silver: #A2A3A1
 
-//DEFAULTS
+//Sizing
+$side-bar-width: 30vw
+$top-bar-height: 10vh
+/****************** DEFAULTS ********************/
 *
   box-sizing: border-box
   font-family: $default-font
@@ -22,7 +26,6 @@ $silver: #A2A3A1
 
 a
   text-decoration: none
-
   &:hover
     color: $salmon
 
@@ -39,15 +42,14 @@ h1, h2, h4
     letter-spacing: .9em
     color: $salmon
 
-
-//Effect for bubbles on hover
+/****************** MIXINS ********************/
 =bubble-grow()
   transition-duration: 1s
   &:hover
     background-color: $salmon
     font-size: larger
     color: $off-white
-
+/****************** SIDE BAR ********************/
 //Scrolling arrow
 #arrow
   writing-mode: vertical-rl
@@ -58,6 +60,7 @@ h1, h2, h4
   text-align: center
   opacity: .5
 
+//Scroll instructions
 #scroll-here
   opacity: .5
   writing-mode: vertical-lr
@@ -68,57 +71,14 @@ h1, h2, h4
   font-size: large
   font-family: $header-font
 
-//Top bar
-header
-  position: fixed
-  width: 100vw
-  height: 10vh
-  z-index: 100
-  background-color: $warm-black
-  display: grid
-  grid-template: "logo menu-button"
 
-  h1
-    font-size: small
-
-  a
-    font-family: $header-font
-    text-align: right
-    font-variant-caps: small-caps
-
-header h1
-  grid-area: logo
-  color: $salmon
-
-//Welcome Section
-#name, #major
-  font-family: $header-font
-
-#name
-  font-size: larger
-  color: $salmon
-
-#major
-  font-size: large
-  color: $blue-accent
-
-#welcome
-  background-color: $warm-black
-  left: 0
-  p
-    margin: 10px
-    font-size: large
-  h2
-    font-size: large
-    letter-spacing: .6em
-
-//SIDE BAR & CONTENT
+//Main side bar
 #side-bar
   box-sizing: content-box
   position: fixed
   background-color: $warm-black
   height: 100vh
-  width: 30vw
+  width: $side-bar-width
   overflow-y: scroll
   left: -50px
   padding-left: 50px
@@ -136,12 +96,7 @@ header h1
     left: 0
     background-image: linear-gradient(rgba($warm-black, 1) 10vh, rgba($warm-black, 0), rgba($warm-black, 0), rgba($warm-black, 1))
 
-#section-one
-  margin-top: 20vh
-
-#section-four
-  padding-bottom: 40vh
-
+//Sections
 .section
   padding: 30vh 20px 50vh 20px
   width: 100%
@@ -149,13 +104,40 @@ header h1
   h1
     word-wrap: break-word
 
+#section-one
+  margin-top: 20vh
+
+#section-four
+  padding-bottom: 40vh
+
+/****************** TOP BAR ********************/
+header
+  position: fixed
+  width: 100vw
+  height: $top-bar-height
+  z-index: 100
+  background-color: $warm-black
+  display: grid
+  grid-template-areas: "logo email"
+  justify-content: space-between
+  h1
+    font-size: small
+    grid-area: logo
+    color: $salmon
+  a
+    font-family: $header-font
+    text-align: right
+    font-variant-caps: small-caps
+    grid-area: email
+
+/****************** MAIN CONTENT ********************/
 #content-container
   position: fixed
   background-color: $off-white
-  width: 70vw
+  width: 100vw - $side-bar-width
   height: 100vh
-  margin-left: 30vw
-  margin-top: 10vh
+  margin-left: $side-bar-width
+  margin-top: $top-bar-height
   z-index: 10000
   color: $warm-black
 
@@ -163,12 +145,30 @@ header h1
   left: 100vw
   width: inherit
   height: inherit
-  margin-left: 30vw
+  margin-left: $side-bar-width
   position: inherit
   padding: 5vh 5vw 20vh
+/****************** WELCOME CONTENT ********************/
+#welcome
+  background-color: $warm-black
+  left: 0
+  p
+    margin: 10px
+    font-size: large
+  h2
+    font-size: large
+    letter-spacing: .6em
 
+#name, #major
+  font-family: $header-font
+#name
+  font-size: larger
+  color: $salmon
+#major
+  font-size: large
+  color: $blue-accent
 
-//EDUCATION
+/****************** EDUCATION CONTENT ********************/
 #university
   display: grid
   grid-template-columns: 2fr 1fr
@@ -242,10 +242,10 @@ header h1
 
 
 #familiar, #proficient
-  border-color: $yellow-accent
+  border-color: $blue-accent
 
   li
-    background-color: $yellow-accent
+    background-color: $blue-accent
     +bubble-grow()
 
 
@@ -262,7 +262,7 @@ header h1
   li
     padding: 10px
     list-style-type: circle
-    color: var(--off-white)
+    color: $off-white
     transition-duration: 1s
 
     &:hover
@@ -272,8 +272,7 @@ header h1
       color: $salmon
       font-family: $header-font
 
-
-//PROJECTS
+/****************** PROJECTS CONTENT ********************/
 #projects
   display: grid
   width: inherit
@@ -322,7 +321,7 @@ header h1
   padding: 10px 0 10px 10px
   border-top: 1px solid #211A1D
 
-//Contact
+/****************** CONTACT CONTENT ********************/
 #contact
   grid-template-columns: 1fr
   grid-template-rows: 1fr 1fr 1fr
