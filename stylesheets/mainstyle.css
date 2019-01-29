@@ -334,13 +334,10 @@ header a {
 }
 
 .description {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.29;
-  letter-spacing: 0.1px;
+  font-size: 13px;
   text-align: left;
-  padding: 10px 0 10px 10px;
-  border-top: 1px solid #211A1D;
+  padding: 10px;
+  border-top: 1px solid #EB5E55;
 }
 
 /****************** CONTACT CONTENT ********************/
