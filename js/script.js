@@ -1,3 +1,5 @@
+//Custom tags
+document.createElement('section-label');
 //Immediately resize elements as necessary
 resizeWindow();
 window.addEventListener('resize', resizeWindow, true);
@@ -5,13 +7,61 @@ window.addEventListener('resize', resizeWindow, true);
 //Update as the user scrolls the side-bar
 document.getElementById("side-bar").addEventListener('scroll', updateScroll);
 let sections = document.getElementsByClassName("section");
+document.getElementById("menu-button").addEventListener('click', toggleMenu);
+document.getElementById("side-bar").addEventListener('click', hideMenu);
+
+document.getElementById("content-container").addEventListener('click', hideMenu);
+
+function toggleMenu() {
+    hideMenu();
+    showMenu();
+}
+
+function showMenu() {
+    let menu = document.getElementById("menu");
+    let button = document.getElementById("menu-button");
+    if (!button.classList.contains("toggled")) {
+        let interval = setInterval(frame, 5);
+        let offset = -100;
+
+        function frame() {
+            if (offset >= 10) {
+                clearInterval(interval);
+                button.classList.add("toggled");
+            } else {
+                offset++;
+                menu.style.top = offset + "vh";
+            }
+        }
+    }
+}
+
+function hideMenu() {
+    let menu = document.getElementById("menu");
+    let button = document.getElementById("menu-button");
+    if (button.classList.contains("toggled")) {
+        let interval = setInterval(frame, 5);
+        let offset = 10;
+
+        function frame() {
+            if (offset <= -100) {
+                clearInterval(interval);
+                button.classList.remove("toggled");
+            } else {
+                offset--;
+                menu.style.top = offset + "vh";
+            }
+        }
+    }
+}
+
 
 function updateScroll() {
     //Draw all of the sections based on scroll position
     for (let i = sections.length - 1; i >= 0; i--) {
         let pos = getTopOffset(sections[i]);
         switch (sections[i].id) {
-            case ("section-one"):
+            case ("welcome-section"):
                 //Only show scrolling guide at Welcome screen
                 if (pos < window.innerHeight * -.2) {
                     document.getElementById("scroll-here").style.display = "none";
@@ -20,17 +70,21 @@ function updateScroll() {
                 }
                 displayContent(document.getElementById("welcome"), pos);
                 break;
-            case ("section-two"):
+            case ("education-section"):
                 animText(sections[i].getElementsByTagName("H1")[0], pos, "Education");
                 displayContent(document.getElementById("university"), pos);
                 break;
-            case ("section-three"):
+            case ("about-section"):
+                animText(sections[i].getElementsByTagName("H1")[0], pos, "About Me");
+                displayContent(document.getElementById("personal"), pos);
+                break;
+            case ("project-section"):
                 animText(sections[i].getElementsByTagName("H1")[0], pos, "Projects");
                 displayContent(document.getElementById("projects"), pos);
                 break;
-            case ("section-four"):
+            case ("contact-section"):
                 let CInfo = document.getElementById("contact");
-                if(parseInt(CInfo.style.left) <= 0 && pos < window.innerHeight * .2){
+                if (parseInt(CInfo.style.left) <= 0 && pos < window.innerHeight * .2) {
                     document.getElementById("arrow").style.display = "none";
                     sections[i].getElementsByTagName("H1")[0].innerHTML = "Contact";
                     CInfo.style.left = "-1vw";
@@ -96,7 +150,7 @@ function animateScroll({draw, location}) {
 
 //Resize elements to make the website easier to navigate on smaller screens
 function resizeWindow() {
-    if(window.innerWidth / window.devicePixelRatio < 400) {
+    if (window.innerWidth / window.devicePixelRatio < 400) {
         let ps = document.querySelectorAll("#side-bar p");
         for (let i = 0; i < ps.length; i++) {
             ps[i].style.display = "none"
@@ -122,8 +176,7 @@ function resizeWindow() {
         document.getElementById("content-container").style.width = "80vw";
         document.getElementById("content-container").style.marginLeft = "20vw";
         document.getElementById("side-bar").style.width = "20vw";
-    }
-    else {
+    } else {
         let ps = document.querySelectorAll("#side-bar p");
         for (let i = 0; i < ps.length; i++) {
             ps[i].style.display = "block";

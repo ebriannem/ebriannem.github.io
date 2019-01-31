@@ -14,6 +14,19 @@ $silver: #A2A3A1
 //Sizing
 $side-bar-width: 30vw
 $top-bar-height: 10vh
+/****************** MIXINS ********************/
+=bubble-grow()
+  transition-duration: 1s
+  &:hover
+    background-color: $salmon
+    font-size: larger
+    color: $off-white
+=text-grow()
+  transition-duration: 1s
+  &:hover
+    color: $salmon
+    letter-spacing: .6em
+
 /****************** DEFAULTS ********************/
 *
   box-sizing: border-box
@@ -37,18 +50,56 @@ h1, h2, h4
   font-variant: small-caps
   letter-spacing: .5em
   padding-bottom: 10px
-  transition-duration: 1s
-  &:hover
-    letter-spacing: .9em
-    color: $salmon
+  +text-grow
+/****************** MENU BAR ********************/
+.anchor
+  position: relative
+  bottom: 10vh
+#menu-button
+  width: 10vw
+  background: none
+  font-family: $header-font
+  font-variant-caps: small-caps
+  font-size: large
+  text-align: center
+  +text-grow
+.toggled
+   color: $salmon
+   letter-spacing: .6em
+#menu
+  width: 20vw
+  min-width: min-content
+  height: 90vh
+  background-color: $off-white
+  position: fixed
+  right: 0
+  top: -100vh
+  z-index: 7
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr
+  li
+    list-style: none
+    padding: 5vh 5vw
+    text-align: center
+    height: 18vh
+  a
+    font-family: $header-font
+    font-variant: small-caps
+    letter-spacing: .5em
+    font-weight: 600
+    +text-grow
 
-/****************** MIXINS ********************/
-=bubble-grow()
-  transition-duration: 1s
-  &:hover
-    background-color: $salmon
-    font-size: larger
+.black-menu
+  background-color: $warm-black
+  height: max-content
+  a
     color: $off-white
+.white-menu
+  background-color: $off-white
+  height: max-content
+  a
+    color: $warm-black
+
+
 /****************** SIDE BAR ********************/
 //Scrolling arrow
 #arrow
@@ -104,10 +155,10 @@ h1, h2, h4
   h1
     word-wrap: break-word
 
-#section-one
+#welcome-section
   margin-top: 20vh
 
-#section-four
+#contact-section
   padding-bottom: 40vh
 
 /****************** TOP BAR ********************/
@@ -115,20 +166,24 @@ header
   position: fixed
   width: 100vw
   height: $top-bar-height
-  z-index: 100
+  z-index: 10
   background-color: $warm-black
   display: grid
-  grid-template-areas: "logo email"
+  grid-template-areas: "logo menu"
   justify-content: space-between
-  h1
+  a
     font-size: small
     grid-area: logo
     color: $salmon
-  a
     font-family: $header-font
-    text-align: right
-    font-variant-caps: small-caps
-    grid-area: email
+    font-variant: small-caps
+    letter-spacing: .5em
+    padding-bottom: 10px
+    +text-grow
+#menu
+  color: $salmon
+  text-align: right
+  grid-area: menu
 
 /****************** MAIN CONTENT ********************/
 #content-container
@@ -138,7 +193,7 @@ header
   height: 100vh
   margin-left: $side-bar-width
   margin-top: $top-bar-height
-  z-index: 10000
+  z-index: 5
   color: $warm-black
 
 .content
@@ -264,7 +319,6 @@ header
     list-style-type: circle
     color: $off-white
     transition-duration: 1s
-
     &:hover
       text-shadow: 2px 2px 4px black
       color: $salmon
@@ -317,6 +371,32 @@ header
   text-align: left
   padding: 10px
   border-top: 1px solid $salmon
+
+/****************** PERSONAL CONTENT ********************/
+#personal
+  display: grid
+  width: inherit
+  grid-template-columns: 1fr 1fr 1fr 1fr
+  overflow-y: scroll
+  grid-gap: 0
+  padding: 0
+  img
+    width: 100%
+    height: auto
+
+.column
+  background-color: $off-white
+  color: $warm-black
+  min-width: min-content
+  height: auto
+  h2
+    color: $salmon
+  p, h2
+    padding: 0 1vw 1vh 1vw
+
+.black
+  background-color: $warm-black
+  color: $off-white
 
 /****************** CONTACT CONTENT ********************/
 #contact

@@ -1,4 +1,5 @@
 /****************** CONSTANTS ********************/
+/****************** MIXINS ********************/
 /****************** DEFAULTS ********************/
 * {
   box-sizing: border-box;
@@ -29,11 +30,80 @@ h1, h2, h4 {
   transition-duration: 1s;
 }
 h1:hover, h2:hover, h4:hover {
-  letter-spacing: 0.9em;
   color: #EB5E55;
+  letter-spacing: 0.6em;
 }
 
-/****************** MIXINS ********************/
+/****************** MENU BAR ********************/
+.anchor {
+  position: relative;
+  bottom: 10vh;
+}
+
+#menu-button {
+  width: 10vw;
+  background: none;
+  font-family: Dosis, monospace;
+  font-variant-caps: small-caps;
+  font-size: large;
+  text-align: center;
+  transition-duration: 1s;
+}
+#menu-button:hover {
+  color: #EB5E55;
+  letter-spacing: 0.6em;
+}
+
+.toggled {
+  color: #EB5E55;
+  letter-spacing: 0.6em;
+}
+
+#menu {
+  width: 20vw;
+  min-width: min-content;
+  height: 90vh;
+  background-color: #E5E6E4;
+  position: fixed;
+  right: 0;
+  top: -100vh;
+  z-index: 7;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+#menu li {
+  list-style: none;
+  padding: 5vh 5vw;
+  text-align: center;
+  height: 18vh;
+}
+#menu a {
+  font-family: Dosis, monospace;
+  font-variant: small-caps;
+  letter-spacing: 0.5em;
+  font-weight: 600;
+  transition-duration: 1s;
+}
+#menu a:hover {
+  color: #EB5E55;
+  letter-spacing: 0.6em;
+}
+
+.black-menu {
+  background-color: #050609;
+  height: max-content;
+}
+.black-menu a {
+  color: #E5E6E4;
+}
+
+.white-menu {
+  background-color: #E5E6E4;
+  height: max-content;
+}
+.white-menu a {
+  color: #050609;
+}
+
 /****************** SIDE BAR ********************/
 #arrow {
   writing-mode: vertical-rl;
@@ -89,11 +159,11 @@ h1:hover, h2:hover, h4:hover {
   word-wrap: break-word;
 }
 
-#section-one {
+#welcome-section {
   margin-top: 20vh;
 }
 
-#section-four {
+#contact-section {
   padding-bottom: 40vh;
 }
 
@@ -102,22 +172,31 @@ header {
   position: fixed;
   width: 100vw;
   height: 10vh;
-  z-index: 100;
+  z-index: 10;
   background-color: #050609;
   display: grid;
-  grid-template-areas: "logo email";
+  grid-template-areas: "logo menu";
   justify-content: space-between;
 }
-header h1 {
+header a {
   font-size: small;
   grid-area: logo;
   color: #EB5E55;
-}
-header a {
   font-family: Dosis, monospace;
+  font-variant: small-caps;
+  letter-spacing: 0.5em;
+  padding-bottom: 10px;
+  transition-duration: 1s;
+}
+header a:hover {
+  color: #EB5E55;
+  letter-spacing: 0.6em;
+}
+
+#menu {
+  color: #EB5E55;
   text-align: right;
-  font-variant-caps: small-caps;
-  grid-area: email;
+  grid-area: menu;
 }
 
 /****************** MAIN CONTENT ********************/
@@ -128,7 +207,7 @@ header a {
   height: 100vh;
   margin-left: 30vw;
   margin-top: 10vh;
-  z-index: 10000;
+  z-index: 5;
   color: #050609;
 }
 
@@ -338,6 +417,38 @@ header a {
   text-align: left;
   padding: 10px;
   border-top: 1px solid #EB5E55;
+}
+
+/****************** PERSONAL CONTENT ********************/
+#personal {
+  display: grid;
+  width: inherit;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  overflow-y: scroll;
+  grid-gap: 0;
+  padding: 0;
+}
+#personal img {
+  width: 100%;
+  height: auto;
+}
+
+.column {
+  background-color: #E5E6E4;
+  color: #050609;
+  min-width: min-content;
+  height: auto;
+}
+.column h2 {
+  color: #EB5E55;
+}
+.column p, .column h2 {
+  padding: 0 1vw 1vh 1vw;
+}
+
+.black {
+  background-color: #050609;
+  color: #E5E6E4;
 }
 
 /****************** CONTACT CONTENT ********************/
