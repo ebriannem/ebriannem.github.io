@@ -95,7 +95,7 @@ function updateScroll() {
                 }
                 break;
             default:
-                document.body.innerHTML = "I've made a mistake.";
+                document.body.innerHTML = "Could not find " + sections[i].id;
         }
 
     }
