@@ -50,22 +50,28 @@ h1, h2, h4
   font-variant: small-caps
   letter-spacing: .5em
   padding-bottom: 10px
+  cursor: default
   +text-grow
 /****************** MENU BAR ********************/
 .anchor
   position: relative
   bottom: 10vh
 #menu-button
-  width: 10vw
+  margin-top: -4vh
+  padding-right: 1vh
+  width: 20vw
   background: none
   font-family: $header-font
   font-variant-caps: small-caps
   font-size: large
-  text-align: center
+  text-align: right
   +text-grow
 .toggled
    color: $salmon
    letter-spacing: .6em
+
+#logo
+  padding: 1vh
 #menu
   width: 20vw
   min-width: min-content
@@ -222,7 +228,10 @@ header
 #major
   font-size: large
   color: $blue-accent
-
+.emphasis-salmon
+  color: $salmon
+.emphasis-blue
+  color: $blue-accent
 /****************** EDUCATION CONTENT ********************/
 #university
   display: grid
@@ -377,26 +386,49 @@ header
   display: grid
   width: inherit
   grid-template-columns: 1fr 1fr 1fr 1fr
-  overflow-y: scroll
   grid-gap: 0
   padding: 0
-  img
-    width: 100%
-    height: auto
+  background-color: $warm-black
 
 .column
-  background-color: $off-white
-  color: $warm-black
-  min-width: min-content
+  width: (100vw - $side-bar-width) / 3
   height: auto
-  h2
-    color: $salmon
+  transition-duration: 1s
+  z-index: 10
+  &:hover > .interest-content
+    display: block
   p, h2
     padding: 0 1vw 1vh 1vw
+    color: white
 
-.black
-  background-color: $warm-black
-  color: $off-white
+
+#abandoned-interest
+  background: url("../resources/abandoned.jpg")
+  background-size: cover
+  &:hover
+    width: (100vw - $side-bar-width) / 2
+    background: linear-gradient(rgba($warm-black, 0.7),rgba($warm-black, 0.7)), url("../resources/abandoned.jpg")
+    background-size: cover
+#bread-interest
+  background: url("../resources/bread.jpg")
+  background-size: cover
+  &:hover
+    width: (100vw - $side-bar-width) / 2
+    background: linear-gradient(rgba($warm-black, 0.7),rgba($warm-black, 0.7)), url("../resources/bread.jpg")
+    background-size: cover
+#art-interest
+  background: url("../resources/art.jpg")
+  background-size: cover
+  &:hover
+    width: (100vw - $side-bar-width) / 2
+    background: linear-gradient(rgba($warm-black, 0.7),rgba($warm-black, 0.7)), url("../resources/art.jpg")
+    background-size: cover
+.interest-content
+  display: none
+  width: (100vw - $side-bar-width) / 2
+  overflow: hidden
+
+
 
 /****************** CONTACT CONTENT ********************/
 #contact

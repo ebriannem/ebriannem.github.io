@@ -11,7 +11,7 @@
 </head>
 <!--Top Bar-->
 <header>
-    <a href="#contact-section">Brianne</a>
+    <a href="#contact-section" id="logo">Brianne</a>
     <button id="menu-button">MENU</button>
 </header>
 
@@ -37,7 +37,8 @@
     <div id="education-section" class="section">
         <h1></h1>
         <p>I'm in my second year of studying Computer Science. I'm planning on graduating with a Bachelor's in Computer
-            Science and Minor in Mathematics in 2020. I expect to complete my Master's in Computer Science in 2021.</p>
+            Science and Minor in Mathematics in 2020. I expect to complete my Master's in Computer Science in 2021.
+        </p>
     </div>
     <!--Project Section-->
     <div id="projects-anchor" class="anchor"></div>
@@ -67,8 +68,17 @@
     <!--Welcome content-->
     <div id="welcome" class="content">
         <h1>Welcome.</h1>
-        <p>Hello, my name is <span id="name">Brianne Matthews</span>,</p>
-        <p>I'm a <span id="major"> Computer Science </span> student, and this is my website.
+        <p>Hello, my name is <span id="name">Brianne Matthews</span>.</p>
+        <p>I'm a 2nd year <span id="major"> Computer Science </span> student, and this is my website.</p>
+        <p>
+            I plan on graduating with my Bachelor's in 2020. In the meantime, I'm excited to learn as much as I
+            can in the broad field of CS. I've worked in various languages including <span class="emphasis-salmon">Java</span>,
+            <span class="emphasis-salmon">Python</span>, and <span class="emphasis-salmon">C++</span>, and I've
+            recently been learning more about <span class="emphasis-blue">AI</span> and
+            <span class="emphasis-blue">web development</span>.
+        </p>
+        <p>
+            Feel free to keep scrolling if you want to hear more.
         </p>
         <h2>Thanks for visiting.</h2>
     </div>
@@ -78,7 +88,7 @@
         <div id="uniHeader">
             <img alt="NEU Logo" src="https://i0.wp.com/web.northeastern.edu/numa/wp-content/uploads/NEU-logo.png?ssl=1">
             <h2 id="college">Northeastern University</h2>
-            <h3 id="degree">Bachelors of Science in Computer Science</h3>
+            <h3 id="degree">Bachelor's of Science in Computer Science</h3>
             <h5 id="date">2017 - Present</h5>
             <h5 id="gpa">GPA: 3.96/4.00</h5>
         </div>
@@ -87,7 +97,8 @@
             <h4>Relevant Courses</h4>
             <ul>
                 <li>Algorithms <i>Graduate Level</i></li>
-                <li>Artificial Inteli>Computer Systems</li>
+                <li>Artificial Intelligence</li>
+                <li>Computer Systems</li>
                 <li>Logic and Computation</li>
                 <li>Networks and Systems</li>
                 <li>Object-Oriented Design</li>
@@ -161,7 +172,7 @@
             <h2>ANIMATOR</h2>
             <p class="lang">Java</p>
             <p class="description">
-                For my Object Oriented Design class, I created a Java application that allows the user to create
+                For my Object-Oriented Design class, I created a Java application that allows the user to create
                 animations using basic shapes. I designed a UI that allows viewing the animation with the added
                 functionality of changing speed, jumping in time, and looping. When done, the user can export the
                 animation.
@@ -170,24 +181,35 @@
     </div>
     <!--Personal Content-->
     <div id="personal" class="content">
-        <div class="black column">
-            <img src="resources/abandoned.jpg">
-            <h2>ABANDONED BUILDINGS</h2>
-            <p>I like art</p>
+        <div class="column" id="abandoned-interest">
+            <div class="interest-content">
+                <h2>ABANDONED BUILDINGS</h2>
+                <p>Back at home in rural North Carolina, my friends and I
+                liked exploring the woods, where we'd often find
+                old, ivy-covered buildings. I love to take photographs of
+                    places I've found. This building is one I found in
+                    New Hampshire.</p>
+            </div>
         </div>
-        <div class="column">
+        <div class="column" id="art-interest">
+            <div class="overlay"></div>
+            <div class="interest-content">
             <h2>ART</h2>
-            <p>I like art</p>
+            <p>While it's always been off and on, drawing is probably my oldest hobby.
+                I enjoy drawing birds, people, and fantasy creatures.
+                I tend to work digitally or with watercolor and colored pencils.</p>
+            </div>
         </div>
-
-        <div class="black column">
-            <img src="resources/bread.jpg">
+        <div class="column" id="bread-interest">
+            <div class="interest-content">
             <h2>BREAD BAKING</h2>
-            <p>I like art</p>
-        </div>
-        <div class="column">
-            <h2>GAMES</h2>
-            <p>I like art</p>
+            <p>
+                While it's difficult in my tiny kitchen, I enjoy baking loaves of bread
+                for my friends in my free time.
+                The loaf you see here is twisted and filled with kalamata olives and
+                parmesan cheese.
+            </p>
+            </div>
         </div>
     </div>
     <!--Contact Information-->

@@ -23,11 +23,11 @@ function showMenu() {
     if (!button.classList.contains("toggled")) {
         let interval = setInterval(frame, 5);
         let offset = -100;
-
+        button.classList.add("toggled");
         function frame() {
             if (offset >= 10) {
                 clearInterval(interval);
-                button.classList.add("toggled");
+
             } else {
                 offset++;
                 menu.style.top = offset + "vh";
