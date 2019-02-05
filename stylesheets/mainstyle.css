@@ -442,6 +442,7 @@ header a:hover {
   grid-gap: 0;
   padding: 0;
   background-color: #050609;
+  overflow-x: scroll;
 }
 
 .column {
