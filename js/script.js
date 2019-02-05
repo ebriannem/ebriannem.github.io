@@ -1,8 +1,3 @@
-//Custom tags
-document.createElement('section-label');
-//Immediately resize elements as necessary
-resizeWindow();
-window.addEventListener('resize', resizeWindow, true);
 /***************** SCROLLING ****************/
 //Update as the user scrolls the side-bar
 document.getElementById("side-bar").addEventListener('scroll', updateScroll);
@@ -145,62 +140,4 @@ function animateScroll({draw, location}) {
         frac = 0;
     }
     draw(frac);
-}
-
-
-//Resize elements to make the website easier to navigate on smaller screens
-function resizeWindow() {
-    if (window.innerWidth / window.devicePixelRatio < 400) {
-        let ps = document.querySelectorAll("#side-bar p");
-        for (let i = 0; i < ps.length; i++) {
-            ps[i].style.display = "none"
-        }
-        let sh = document.querySelectorAll("#side-bar h1");
-        for (let i = 0; i < ps.length; i++) {
-            sh[i].style.writingMode = "vertical-lr";
-            sh[i].style.textOrientation = "upright";
-            sh[i].style.fontSize = "medium";
-        }
-        let secs = document.querySelectorAll(".section");
-        for (let i = 0; i < ps.length; i++) {
-            secs[i].style.paddingLeft = "0";
-            secs[i].style.paddingRight = "1vw";
-        }
-        let cons = document.querySelectorAll(".content");
-        for (let i = 0; i < ps.length; i++) {
-            cons[i].style.marginLeft = "20vw";
-            cons[i].style.width = "80vw";
-        }
-        document.getElementById("projects").style.gridTemplateColumns = "1fr";
-        document.getElementById("contact").style.marginLeft = "20vw";
-        document.getElementById("content-container").style.width = "80vw";
-        document.getElementById("content-container").style.marginLeft = "20vw";
-        document.getElementById("side-bar").style.width = "20vw";
-    } else {
-        let ps = document.querySelectorAll("#side-bar p");
-        for (let i = 0; i < ps.length; i++) {
-            ps[i].style.display = "block";
-        }
-        let sh = document.querySelectorAll("#side-bar h1");
-        for (let i = 0; i < ps.length; i++) {
-            sh[i].style.writingMode = "lr";
-            sh[i].style.textOrientation = "mixed";
-            sh[i].style.fontSize = "x-large";
-        }
-        let secs = document.querySelectorAll(".section");
-        for (let i = 0; i < ps.length; i++) {
-            secs[i].style.paddingLeft = "20px";
-            secs[i].style.paddingRight = "20px";
-        }
-        let cons = document.querySelectorAll(".content");
-        for (let i = 0; i < ps.length; i++) {
-            cons[i].style.marginLeft = "30vw";
-            cons[i].style.width = "70vw";
-        }
-        document.getElementById("projects").style.gridTemplateColumns = "1fr 1fr";
-        document.getElementById("contact").style.marginLeft = "30vw";
-        document.getElementById("content-container").style.width = "70vw";
-        document.getElementById("content-container").style.marginLeft = "30vw";
-        document.getElementById("side-bar").style.width = "30vw";
-    }
 }
