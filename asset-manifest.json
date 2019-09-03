@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c1d4a9ee.chunk.css",
+    "main.js": "/static/js/main.1e692969.chunk.js",
+    "main.js.map": "/static/js/main.1e692969.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.5b462bdd.js",
+    "runtime~main.js.map": "/static/js/runtime~main.5b462bdd.js.map",
+    "static/js/2.8895aacf.chunk.js": "/static/js/2.8895aacf.chunk.js",
+    "static/js/2.8895aacf.chunk.js.map": "/static/js/2.8895aacf.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.8f4d72e62630a4eba42a92624838e46d.js": "/precache-manifest.8f4d72e62630a4eba42a92624838e46d.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.c1d4a9ee.chunk.css.map": "/static/css/main.c1d4a9ee.chunk.css.map",
+    "static/media/Brianne_Matthews_Resume.pdf": "/static/media/Brianne_Matthews_Resume.34c6c486.pdf",
+    "static/media/code.d7ef8adb.svg": "/static/media/code.d7ef8adb.svg",
+    "static/media/github.5cff78e4.svg": "/static/media/github.5cff78e4.svg",
+    "static/media/gmail.20e8982e.svg": "/static/media/gmail.20e8982e.svg",
+    "static/media/linkedin.beb71356.svg": "/static/media/linkedin.beb71356.svg",
+    "static/media/resume.09f0201e.svg": "/static/media/resume.09f0201e.svg"
+  }
+}
